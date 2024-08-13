@@ -50,7 +50,7 @@ footer {
     display: flex;
     min-height: 70px;
     width: 100%;
-    background-color: linear-gradient(45deg, #ff0000, #ee3131);
+    background: linear-gradient(45deg, #ff0000, #ee3131);
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
