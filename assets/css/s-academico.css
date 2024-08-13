@@ -64,9 +64,17 @@ body {
     transition: 1s;
 }
 
-.header-nav > h2 {
+h2.letras {
+    position: fixed;
     color: #000;
-    font-size: 2em;
+    z-index: 1;
+
+}
+h6.letras {
+    position: fixed;
+    color: #000;
+    z-index: 1;
+
 }
 
 .head {
