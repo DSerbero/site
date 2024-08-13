@@ -64,17 +64,37 @@ body {
     transition: 1s;
 }
 
-h2.letras {
-    position: fixed;
-    color: #000;
-    z-index: 1;
-
-}
 h6.letras {
-    position: fixed;
-    color: #000;
+    position: absolute;
+    color: #fff;
     z-index: 1;
+    font-size: 3em;
+    margin-top: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    text-shadow: 0px 0px 10px #000;
+}
 
+h2.letras {
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+    font-size: 3em;
+    margin-top: 170px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    text-shadow: 0px 0px 10px #000;
+}
+
+span.letras {
+    position: absolute;
+    color: #5e5e63;
+    z-index: 1;
+    font-size: 1.5em;
+    margin-top: 300px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    margin-left: 50px;
 }
 
 .head {
@@ -358,7 +378,7 @@ header nav a:hover {
     display: flex;
     padding: 0;
     width: 400%;
-    animation: slide 20s infinite alternate ease-in-out;
+    animation: slide 25s infinite alternate ease-in-out;
 
 }
 
