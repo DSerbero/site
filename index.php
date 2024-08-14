@@ -12,22 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,400&display=swap"
         rel="stylesheet">
     <script src="./assets/js/scroll.js"></script>
-    <script>
-        window.addEventListener('load', function () {
-            setTimeout(function () {
-                var preloader = document.querySelectorAll(".preloader");
-                preloader.forEach(function (element) {
-                    element.classList.add("loaded");
-                });
-            }, 300);
-        });
-        window.addEventListener('beforeunload', function (event) {
-            var preloader = document.querySelectorAll(".preloader");
-            preloader.forEach(function (element) {
-                element.classList.remove("loaded");
-            });
-        });
-    </script>
+    <script src="./assets/js/animation.js"></script>
 </head>
 
 <body>
@@ -53,7 +38,7 @@
                     </div>
                 </a>
 
-                <a href="pqrs.html">
+                <a href="./views/layouts/crear_pqrs.php">
                     <div class="option">
                         <i class="fa-sharp fa-solid fa-eye"></i>
                         <h4>Crear  P.Q.R.S</h4>
@@ -145,16 +130,7 @@
         </section>
     </main>
     <footer id="contacto">
-        <?php include("./views/layouts/footer.php") ?>
-        <div class="footer__paragraph">
-            <h2>P.Q.R.S</h2>
-            <p>Institución Educativa Barrio Santander &copy;</p>
-        </div>
-        <div class="footer__redes">
-            <a target="_blank" href="https://www.facebook.com/colegiosantandermedellin"><img src="./assets/img/facebook.svg" alt=""></svg></a>
-            <a target="_blank" href="https://www.instagram.com/iebarriosantandermedellin"><img src="./assets/img/instagram.svg" alt=""></a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCWoeUyDf0EkK0m-NpCF9Now"><img src="./assets/img/youtube.svg" alt=""></a>
-        </div>
+        <?php include './models/footer.php'; ?>
     </footer>
 
     <script type="text/javascript" src="./assets/js/s-academico.js"></script>
