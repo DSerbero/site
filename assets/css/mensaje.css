@@ -1,0 +1,57 @@
+#mensaje {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    height: 290px;
+    z-index: -1;
+    transition: .5s;
+}
+
+*{
+    user-select: none;
+}
+
+#mensaje.cargado {
+    width: 400px;
+    height: 300px;
+    background: #fff;
+    box-shadow: 2px 2px 5px #000;
+    z-index: 1;
+    transition: .1s;
+    
+}
+
+#mensaje h2 {
+    margin: 30px auto;
+}
+
+#mensaje p {
+    margin: auto 20px;
+    text-align: center;
+}
+
+
+
+#mensaje button {
+    margin: auto auto;
+}
+
+.close_msg {
+    width: 100px;
+    height: 40px;
+    background: #fd7e14;
+    border-radius: 1em;
+    border: none;
+    transition: .1s;
+}
+
+.close_msg:hover {
+    width: 96px;
+    height: 38px;
+    border-radius: 1em;
+    transition: .1s;
+}

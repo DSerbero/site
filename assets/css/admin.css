@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/*HEADER*/
+
+.header-nav {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center;
+    gap: 100px;
+    transition: 1.5s;
+    background: #fff;
+    box-shadow: 2px 2px 5px #000;
+}
+
+.abajo {
+    position: fixed;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    transition: 1s;
+    top: 0;
+    box-shadow: 2px 2px 5px #000;
+}
+
+
+.btn__back {
+    margin: 10px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 8%;
+    padding: 8px;
+    border: 2px solid #fd7e14;
+    color: #fd7e14;
+    font-weight: 600;
+    border-radius: 2.5rem;
+    z-index: 11;
+    transition: 1s .8s ease-in-out;
+    position: fixed;
+    left: 30px;
+}
+
+
+.header-nav  img {
+    width: 120px;
+    transition: 1.5s;
+    user-select: none;
+}
+
+.header-nav h2 {
+    user-select: none;
+}
+
+.abajo img {
+    width: 40px;
+    transition: 1s;
+}
+
+/*MAIN*/
+
+main {
+    margin-bottom: 400px;
+}
+
+.content {
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 2px 2px 5px #000;
+}
+
+.content > h2 {
+    text-align: center;
+    padding: 30px;
+
+}
+
+.no_encontrado {
+    border-top: 1px #000 dashed;
+    text-align: center;
+    padding: 2.5%;
+}
+
+.peticion_box {
+    width: 95%;
+    padding: 2.5%;
+    border-top: 1px #000 dashed;
+    display: flex;
+    min-height: 200px;
+}
+
+.peticion_box.en_proceso, .peticion_box.pendientes {
+    width: 95%;
+    padding: 2.5%;
+    border-top: 1px #000 dashed;
+    display: flex;
+    min-height: 230px;
+}
+
+.info_peticion {
+    width: 70%;
+
+}
+
+.peticion_box > img {
+    width: 20%;
+    min-width: 230px;
+    height: 200px;
+    margin: auto;
+}
+
+.peticion_box > a {
+    width: 20%;
+    min-width: 230px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.peticion_box > .sin_imagen {
+    width: 20%;
+    min-width: 230px;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.info_prin{
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.descrip {
+    width: 80%;
+    margin: 5px 0;
+    height: 80%;
+}
+
+
+.pendientes .estado:before {
+    content: '---';
+    width: 5px;
+    height: 5px;
+    color: #f00;
+    background: #f00;
+    border-radius: 100%;
+    border: 3px inset #000;
+    font-size: .6em;
+}
+
+.en_proceso .estado:before {
+    content: '---';
+    width: 5px;
+    height: 5px;
+    color: #ff0;
+    background: #ff0;
+    border-radius: 100%;
+    border: 3px inset #000;
+    font-size: .6em;
+}
+
+.respondido .estado:before {
+    content: '---';
+    width: 5px;
+    height: 5px;
+    color: #0f0;
+    background: #0f0;
+    border-radius: 100%;
+    border: 3px inset #000;
+    font-size: .6em;
+}
+
+.respondido .estado {
+    margin: 5px auto;
+    margin-top: 15px;
+}
+
+
+.estado {
+    margin: 5px auto;
+}
+
+/*FOOTER*/
+
+
+footer {
+    display: flex;
+    min-height: 70px;
+    width: 100%;
+    background: #343a40;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-weight: 600;
+    bottom: 0px;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 30px;
+    margin-top: 50px;
+    position: absolute;
+}
+
+.footer {
+    width: 100%;
+    background: #343a40;
+}
+
+.footer__redes{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    padding-bottom: 30px;
+    background: #343a40;
+}
+
+
+footer a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 7px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+footer a:hover {
+    background-color: #fff;
+    color: #ff0000;
+}
+
+footer a img {
+    margin-top: 5px;
+    margin-left: 0px;
+}
+
+footer .contacto {
+    font-weight: 100;
+}
+
+/*Peloader*/
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    transition: .3s all ease;
+    pointer-events: none;
+    backface-visibility: hidden;
+}
+
+.preloader::before, .preloader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: .2s linear;
+    transform: translateX(0);
+    pointer-events: none;
+}
+
+.preloader::before {
+    left: 0;
+    right: 50%;
+    background: #ffffff;
+}
+
+.preloader::after {
+    left: 50%;
+    right: 0;
+    background: #f8f8fb;
+}
+
+.preloader.loaded::before, .preloader.loaded::after {
+    transition: .4s linear;
+}
+
+.preloader.loaded::before {
+    transform: translateX(-100%);
+}
+
+.preloader.loaded::after {
+    transform: translateX(100%);
+}
+
+.preloader.loaded .preloader-logo,
+.preloader.loaded .preloader-body {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0s;
+}
+
+.preloader-logo,
+.preloader-body {
+    transition: 0s .2s;
+}
+
+.preloader-logo {
+    position: relative;
+    z-index: 10;
+    transform: translate3d(0, -50%, 0);
+    padding: 40px;
+}
+
+.preloader-body {
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+}
+
+.cssload-container {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+.cssload-speeding-wheel {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border: 3px solid #ffb262;
+    border-radius: 50%;
+    border-left-color: #e0e6ea;
+    border-bottom-color: #e0e6ea;
+    animation: cssload-spin .88s infinite linear;
+}
+
+@-webkit-keyframes cssload-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cssload-spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -31,12 +31,6 @@
         <nav class="menu-navegacion">
             <div class="options__menu">
                 <!-- <div class="cerrar">X</div> -->
-                <a href="./Vista/principal.php?control=ingresar">
-                    <div class="option">
-                        <i class="fa-solid fa-key"></i>
-                        <h4>Ingresar</h4>
-                    </div>
-                </a>
 
                 <a href="./views/layouts/crear_pqrs.php">
                     <div class="option">
@@ -53,7 +47,7 @@
             </div>
         </nav>
         <div class="header-nav ">
-            <a href="#inicio"><img src="./assets/img/iebs.png" alt=""></a>
+            <a href="login.php"><img src="./assets/img/iebs.png" alt=""></a>
             <h2>P.Q.R.S</h2>
         </div>
         <div class="slider-frame">
@@ -61,25 +55,21 @@
                 <li>
                     <h6 class="letras">PQRS Que Significa P</h6>
                     <h2 class="letras">PETICION:se refiere a una solicitud formal o informal que alguien <br>hace a otra persona, grupo, o entidad para obtener algo. </h2>
-                    <span class="letras">Gracias por su atencion</span>
                     <img src="./assets/img/descarga.jpeg" alt="">
                 </li>
                 <li>
                     <h6 class="letras">PQRS Que Significa P</h6>
                     <h2 class="letras">PETICION:se refiere a una solicitud formal o informal que alguien <br>hace a otra persona, grupo, o entidad para obtener algo. </h2>
-                    <span class="letras">Gracias por su atencion</span>
                     <img src="./assets/img/descarga1.jpeg" alt="">
                 </li>
                 <li>
                     <h6 class="letras">PQRS Que Significa P</h6>
                     <h2 class="letras">PETICION:se refiere a una solicitud formal o informal que alguien <br>hace a otra persona, grupo, o entidad para obtener algo. </h2>
-                    <span class="letras">Gracias por su atencion</span>
                     <img src="./assets/img/descarga2.jpeg" alt="">
                 </li>
                 <li>
                     <h6 class="letras">PQRS Que Significa P</h6>
                     <h2 class="letras">PETICION:se refiere a una solicitud formal o informal que alguien <br>hace a otra persona, grupo, o entidad para obtener algo. </h2>
-                    <span class="letras">Gracias por su atencion</span>
                     <img src="./assets/img/descarga3.jpeg" alt="">
                 </li>
             </ul>

@@ -20,9 +20,15 @@ document.getElementById('file').addEventListener('change', function (event) {
                 }
                 // Si es un PDF, mostrar un mensaje indicando que se ha seleccionado un PDF
                 else if (file.type === 'application/pdf') {
-                    const pdfMessage = document.createElement('p');
-                    pdfMessage.textContent = 'Se ha seleccionado el PDF:' + file.name;
-                    previewElement.appendChild(pdfMessage);
+                    const pdfText = document.createElement('p');
+                    pdfText.textContent = 'Se ha cargado el documento:';
+                    previewElement.appendChild(pdfText);
+                    const pdfLink = document.createElement('a');
+                    const fileURL = URL.createObjectURL(file);
+                    pdfLink.href = fileURL;
+                    pdfLink.target = '_blank';
+                    pdfLink.textContent = file.name; // Solo mostrar el nombre del archivo
+                    previewElement.appendChild(pdfLink);
                 }
             };
 

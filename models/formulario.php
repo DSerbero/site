@@ -1,16 +1,16 @@
                                                                                         
 <div class="form">
     <h1 class="title">Registro de PQRS</h1>
-    <form method="post" action="procesar_pqrs.php" enctype="multipart/form-data" id="form">
+    <form method="post" action="../../controllers/procesar_pqrs.php" enctype="multipart/form-data" id="form">
         <label for="nombre" class="label">Nombres:</label>
         <input class="input" type="text" id="nombre" name="nombre" required>
         <label for="apellido" class="label">Apellidos:</label>
         <input class="input" type="text" id="apellido" name="apellido" required>
         <label class="label" for="tipo_documento">Tipo de documento:</label>
         <select class="input" name="tipo_documento">
-            <option value="cc">CC</option>
-            <option value="ti">TI</option>
-            <option value="ppt">PPT</option>
+            <option value="1">CC</option>
+            <option value="2">TI</option>
+            <option value="3">PPT</option>
         </select>
         <label for="documento" class="label">Nr° documento:</label>
         <input class="input" type="number" id="documento" name="documento" min="2000000" max="2000000000" required>
@@ -18,26 +18,26 @@
         <input class="input" type="email" id="email" name="email" required>
         <label class="label" for="cargo">Cargo:</label>
         <select class="input" name="cargo">
-            <option value="estudiante">Estudiante</option>
-            <option value="acudiente">Acudiente</option>
-            <option value="docente">Docente</option>
-            <option value="egresado">Egresado</option>
-            <option value="prof_apoyo">Profesional de apoyo</option>
-            <option value="auxiliar">Auxiliar</option>
+            <option value="1">Estudiante</option>
+            <option value="2">Acudiente</option>
+            <option value="3">Docente</option>
+            <option value="4">Egresado</option>
+            <option value="5">Profesional de apoyo</option>
+            <option value="6">Auxiliar</option>
         </select>
         <label class="label" for="tipo_pqrs">Tipo de PQRS:</label>
         <select class="input" name="tipo_pqrs">
-            <option value="peticion">Petición</option>
-            <option value="queja">Queja</option>
-            <option value="reclamo">Reclamo</option>
-            <option value="sugerencia">Sugerencia</option>
-            <option value="felicitacion">Felicitación</option>
+            <option value="1">Petición</option>
+            <option value="2">Queja</option>
+            <option value="3">Reclamo</option>
+            <option value="4">Sugerencia</option>
+            <option value="5">Felicitación</option>
         </select>
 
         <label class="label" for="descripcion">Narre brevemente los hechos:</label>
-        <textarea class="descr" name="descripcion" id="descripcion" rows="10"></textarea>
+        <textarea class="descr" name="descripcion" id="descripcion" rows="10" maxlength="500"></textarea>
 
-        <label class="label" for="archivo">Adjuntar archivo o imágen:</label>
+        <label class="label" for="file">Adjuntar archivo o imágen:</label>
         <div class="container-input">
             <input type="file" name="file" id="file" class="inputfile inputfile" accept="image/*,application/pdf" />
             <label for="file">
@@ -47,7 +47,7 @@
             <span class="iborrainputfile"></span>
             </label>
             <div id="preview">
-                
+                <p>Archivos e imágenes<br> con peso inferior a 1000KB</p>
             </div>
         </div>
         <div class="auto">
