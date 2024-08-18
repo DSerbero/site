@@ -76,103 +76,50 @@ body {
 /*MAIN*/
 
 main {
-    margin-bottom: 400px;
+    width: 100%;
 }
 
-.content {
-    width: 80%;
+.contenedor_prin > h2 {
     margin: 30px auto;
+}
+
+.contenedor_prin {
+    display: flex;
+    flex-direction: column;
+    margin: 30px auto;
+    width: 60%;
+    padding: 5%;
+    background: #fff;
     box-shadow: 2px 2px 5px #000;
+    margin-bottom: 450px;
 }
 
-.content > h2 {
-    text-align: center;
-    padding: 30px;
-
+.contenedor_prin > p {
+    margin-bottom: 5px ;
 }
 
-.no_encontrado {
-    border-top: 1px #000 dashed;
-    text-align: center;
-    padding: 2.5%;
-}
-
-.peticion_box {
-    width: 95%;
-    padding: 2.5%;
-    border-top: 1px #000 dashed;
+.description {
     display: flex;
-    min-height: 200px;
+    flex-direction: column;
 }
 
-.peticion_box.en_proceso, .peticion_box.pendientes {
-    width: 95%;
-    padding: 2.5%;
-    border-top: 1px #000 dashed;
-    display: flex;
-    min-height: 230px;
+.contenedor_prin > img {
+    width: 90%;
+    margin: 10px auto;
 }
 
-.info_peticion {
+.contenedor_prin > iframe {
     width: 70%;
-
+    height: 700px;
+    margin: 10px auto;
 }
 
-.peticion_box > img {
-    width: 20%;
-    min-width: 230px;
-    height: 200px;
-    margin: auto;
-}
-
-.peticion_box > a {
-    width: 20%;
-    min-width: 230px;
-    height: 200px;
-    margin: auto;
+.cuadro_estado {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    margin-top: 10px;
 }
 
-.peticion_box > .sin_imagen {
-    width: 20%;
-    min-width: 230px;
-    height: 200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.info_prin{
-    margin: 0 0 10px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-}
-
-.descrip {
-    width: 80%;
-    margin: 5px 0;
-    height: 80%;
-}
-
-
-.pendientes .estado:before {
-    content: '---';
-    width: 5px;
-    height: 5px;
-    color: #f00;
-    background: #f00;
-    border-radius: 100%;
-    border: 3px inset #000;
-    font-size: .6em;
-}
-
-.en_proceso .estado:before {
+.En.proceso:before {
     content: '---';
     width: 5px;
     height: 5px;
@@ -183,7 +130,18 @@ main {
     font-size: .6em;
 }
 
-.respondido .estado:before {
+.Pendiente:before{
+    content: '---';
+    width: 5px;
+    height: 5px;
+    color: #f00;
+    background: #f00;
+    border-radius: 100%;
+    border: 3px inset #000;
+    font-size: .6em;
+}
+
+.Respondido:before{
     content: '---';
     width: 5px;
     height: 5px;
@@ -194,14 +152,41 @@ main {
     font-size: .6em;
 }
 
-.respondido .estado {
-    margin: 5px auto;
-    margin-top: 15px;
+#cambiar_estado {
+    width: 100px;
+    height: 30px;
+    margin-top: -5px;
+    margin-left: 10px;
+    border: none;
+    background: #fd7e14;
+    border-radius: 1em;
+    transition: .3s;
 }
 
+.enviar_btn {
+    width: 100px;
+    height: 30px;
+    margin-top: -5px;
+    margin-left: 10px;
+    border: none;
+    background: #fd7e14;
+    border-radius: 1em;
+    transition: .3s;
+}
 
-.estado {
-    margin: 5px auto;
+.enviar_btn:hover{
+    color: #282828;
+    box-shadow: .5px .5px 2px #000;
+}
+
+#cambiar_estado:hover {
+    color: #282828;
+    box-shadow: .5px .5px 2px #000;
+}
+
+.select_de{
+    width: 100px;
+    height: 30px;
 }
 
 /*FOOTER*/

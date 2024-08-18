@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-08-2024 a las 04:50:38
+-- Tiempo de generación: 18-08-2024 a las 23:02:07
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `pqrs`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `usuario`, `password`) VALUES
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -61,6 +80,26 @@ INSERT INTO `cargos` (`id_cargo`, `cargo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `estado`
+--
+
+CREATE TABLE `estado` (
+  `id_estado` int(11) NOT NULL,
+  `estado` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `estado`
+--
+
+INSERT INTO `estado` (`id_estado`, `estado`) VALUES
+(1, 'Pendiente'),
+(2, 'En proceso'),
+(3, 'Respondido');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `pqrss`
 --
 
@@ -73,9 +112,10 @@ CREATE TABLE `pqrss` (
   `email` varchar(100) NOT NULL,
   `cargo` int(11) NOT NULL,
   `tipo_pqrs` int(11) NOT NULL,
-  `descripcion` varchar(255) DEFAULT NULL,
+  `descripcion` varchar(500) DEFAULT NULL,
   `id_archivo` int(11) DEFAULT NULL,
-  `fecha_cre` date NOT NULL
+  `fecha_cre` date NOT NULL,
+  `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -125,6 +165,12 @@ INSERT INTO `tipos_pqrs` (`id_tipopqrs`, `tipo`) VALUES
 --
 
 --
+-- Indices de la tabla `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
 -- Indices de la tabla `archivos`
 --
 ALTER TABLE `archivos`
@@ -137,6 +183,12 @@ ALTER TABLE `cargos`
   ADD PRIMARY KEY (`id_cargo`);
 
 --
+-- Indices de la tabla `estado`
+--
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`id_estado`);
+
+--
 -- Indices de la tabla `pqrss`
 --
 ALTER TABLE `pqrss`
@@ -144,7 +196,8 @@ ALTER TABLE `pqrss`
   ADD KEY `tipo_documento` (`tipo_documento`),
   ADD KEY `cargo` (`cargo`),
   ADD KEY `tipo_pqrs` (`tipo_pqrs`),
-  ADD KEY `id_archivo` (`id_archivo`);
+  ADD KEY `id_archivo` (`id_archivo`),
+  ADD KEY `estado` (`estado`);
 
 --
 -- Indices de la tabla `tipos_doc`
@@ -161,6 +214,12 @@ ALTER TABLE `tipos_pqrs`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `archivos`
@@ -185,7 +244,8 @@ ALTER TABLE `pqrss`
   ADD CONSTRAINT `pqrss_ibfk_1` FOREIGN KEY (`tipo_documento`) REFERENCES `tipos_doc` (`id_documento`),
   ADD CONSTRAINT `pqrss_ibfk_2` FOREIGN KEY (`cargo`) REFERENCES `cargos` (`id_cargo`),
   ADD CONSTRAINT `pqrss_ibfk_3` FOREIGN KEY (`tipo_pqrs`) REFERENCES `tipos_pqrs` (`id_tipopqrs`),
-  ADD CONSTRAINT `pqrss_ibfk_4` FOREIGN KEY (`id_archivo`) REFERENCES `archivos` (`id_archivo`);
+  ADD CONSTRAINT `pqrss_ibfk_4` FOREIGN KEY (`id_archivo`) REFERENCES `archivos` (`id_archivo`),
+  ADD CONSTRAINT `pqrss_ibfk_5` FOREIGN KEY (`estado`) REFERENCES `estado` (`id_estado`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -13,10 +13,53 @@ if (isset($_SESSION['usuario'])) {
     <html>
         <head>
             <link rel="stylesheet" href="../../assets/css/admin.css"/>
-            <title>title</title>
+            <link rel="icon" href="../../assets/img/iebs.png">
+            <title>Registro P.Q.R.S</title>
         </head>
         <body>
-            
+            <script>
+                document.addEventListener('change', e => {
+                    if (e.target.matches('#filtro')) {
+                        const seleccionado = e.target.value;
+                        document.querySelectorAll('.peticion_box').forEach(card => {
+                            switch (seleccionado) {
+                                case '':
+                                    // Mostrar todas las tarjetas
+                                    card.classList.remove('quitar');
+                                    card.style.display = ''; 
+                                    break;
+                                case 'pendientes':
+                                    if (card.classList.contains('pendientes')) {
+                                        card.classList.remove('quitar');
+                                        card.style.display = ''; 
+                                    } else {
+                                        card.classList.add('quitar');
+                                        card.style.display = 'none';
+                                    }
+                                    break;
+                                case 'en_proceso':
+                                    if (card.classList.contains('en_proceso')) {
+                                        card.classList.remove('quitar');
+                                        card.style.display = ''; 
+                                    } else {
+                                        card.classList.add('quitar');
+                                        card.style.display = 'none'; 
+                                    }
+                                    break;
+                                case 'respondido':
+                                    if (card.classList.contains('respondido')) {
+                                        card.classList.remove('quitar');
+                                        card.style.display = ''; 
+                                    } else {
+                                        card.classList.add('quitar');
+                                        card.style.display = 'none'; 
+                                    }
+                                    break;
+                            }
+                        });
+                    }
+                });
+            </script>
             <header>
                 <?php
                 include '../../models/header_3.php';
@@ -25,6 +68,12 @@ if (isset($_SESSION['usuario'])) {
             <main>
                 <div class="content">
                     <h2>Registro de PQRS</h2>
+                    <select class="filtro" id="filtro">
+                        <option value="">Todas</option>
+                        <option value="pendientes">Pendientes</option>
+                        <option value="en_proceso">En proceso</option>
+                        <option value="respondido">Respondidas</option>
+                    </select>
                     <div class="pqrs" id="pqrs">
                         <?php
                         if (!($filas > 0)) {
@@ -53,6 +102,16 @@ if (isset($_SESSION['usuario'])) {
                                                     }
                                                     ?>
                                                 </span>
+                                                <span class='tipo_pqrss'>
+                                                    <?php
+                                                    $tipo_pqrs = $datos['tipo_pqrs'];
+                                                    $sql_pqrs = "SELECT tipo FROM tipos_pqrs WHERE id_tipopqrs='$tipo_pqrs'";
+                                                    $result_pqrs = mysqli_query($conectar, $sql_pqrs);
+                                                    foreach ($result_pqrs as $pqrs_show) {
+                                                        echo $pqrs_show['tipo'];
+                                                    }
+                                                    ?>
+                                                </span>
                                                 <span class="fecha">
                                                     <?php  
                                                     $fecha = $datos['fecha_cre'];
@@ -77,7 +136,7 @@ if (isset($_SESSION['usuario'])) {
                                                 ?>
                                             </p>
                                             <p class="restante">
-                                                Dias restantes: 
+                                                Dias restantes: <b>
                                                 <?php
                                                 $fecha_now = new DateTime();
                                                 $fecha_new = new DateTime($datos['fecha_cre']);
@@ -88,7 +147,12 @@ if (isset($_SESSION['usuario'])) {
                                                 $dias_restantes = $diferencia->days;
                                                 echo $dias_restantes;
                                                 ?>
+                                                    </b>
                                             </p>
+                                            <?php 
+                                            $id = $datos['id_solicitud'];
+                                            ?>
+                                            <a href="./vista_detallada.php?id=<?php echo $id; ?>" class="btn-revisar">Revisar</a>
                                         </div>
                                         <?php
                                         if ($datos['id_archivo'] != null){
@@ -133,6 +197,16 @@ if (isset($_SESSION['usuario'])) {
                                                     }
                                                 ?>
                                                 </span>
+                                                <span class='tipo_pqrss'>
+                                                    <?php
+                                                    $tipo_pqrs = $datos['tipo_pqrs'];
+                                                    $sql_pqrs = "SELECT tipo FROM tipos_pqrs WHERE id_tipopqrs='$tipo_pqrs'";
+                                                    $result_pqrs = mysqli_query($conectar, $sql_pqrs);
+                                                    foreach ($result_pqrs as $pqrs_show) {
+                                                        echo $pqrs_show['tipo'];
+                                                    }
+                                                    ?>
+                                                </span>
                                                 <span class="fecha">
                                                     <?php  
                                                     $fecha = $datos['fecha_cre'];
@@ -157,7 +231,7 @@ if (isset($_SESSION['usuario'])) {
                                                 ?>
                                             </p>
                                             <p class="restante">
-                                                Dias restantes: 
+                                                Dias restantes: <b>
                                                 <?php
                                                 $fecha_now = new DateTime();
                                                 $fecha_new = new DateTime($datos['fecha_cre']);
@@ -168,7 +242,12 @@ if (isset($_SESSION['usuario'])) {
                                                 $dias_restantes = $diferencia->days;
                                                 echo $dias_restantes;
                                                 ?>
+                                                    </b>
                                             </p>
+                                            <?php 
+                                            $id = $datos['id_solicitud'];
+                                            ?>
+                                            <a href="./vista_detallada.php?id=<?php echo $id; ?>" class="btn-revisar">Revisar</a>
                                         </div>
                                         <?php
                                         if ($datos['id_archivo'] != null){
@@ -213,6 +292,16 @@ if (isset($_SESSION['usuario'])) {
                                                     }
                                                     ?>
                                                 </span>
+                                                <span class='tipo_pqrss'>
+                                                    <?php
+                                                    $tipo_pqrs = $datos['tipo_pqrs'];
+                                                    $sql_pqrs = "SELECT tipo FROM tipos_pqrs WHERE id_tipopqrs='$tipo_pqrs'";
+                                                    $result_pqrs = mysqli_query($conectar, $sql_pqrs);
+                                                    foreach ($result_pqrs as $pqrs_show) {
+                                                        echo $pqrs_show['tipo'];
+                                                    }
+                                                    ?>
+                                                </span>
                                                 <span class="fecha">
                                                     <?php  
                                                     $fecha = $datos['fecha_cre'];
@@ -236,6 +325,10 @@ if (isset($_SESSION['usuario'])) {
                                                 }
                                                 ?>
                                             </p>
+                                            <?php 
+                                            $id = $datos['id_solicitud'];
+                                            ?>
+                                            <a href="./vista_detallada.php?id=<?php echo $id; ?>" class="btn-revisar">Revisar</a>
                                         </div>
                                         <?php
                                         if ($datos['id_archivo'] != null){
@@ -277,12 +370,13 @@ if (isset($_SESSION['usuario'])) {
                 ?>
             </footer>
             <div class="preloader">
-            <div class="preloader-logo"><a class="brand" href="index1.html"><img class="brand-logo-dark"
-                        src="../../assets/img/iebs.png" alt="" width="245" height="250" /></a>
-            </div>
-            <div class="preloader-body">
-                <div class="cssload-container">
-                    <div class="cssload-speeding-wheel"></div>
+                <div class="preloader-logo"><a class="brand" href="index1.html"><img class="brand-logo-dark"
+                            src="../../assets/img/iebs.png" alt="" width="245" height="250" /></a>
+                </div>
+                <div class="preloader-body">
+                    <div class="cssload-container">
+                        <div class="cssload-speeding-wheel"></div>
+                    </div>
                 </div>
             </div>
             <script src="../../assets/js/scroll.js"></script>

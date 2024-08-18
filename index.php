@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P.Q.R.S</title>
-    <link rel="icon" href="./assets/img/logoprimesaber.png">
+    <link rel="icon" href="./assets/img/iebs.png">
     <link rel="stylesheet" href="./assets/css/s-academico.css">
     <link rel="stylesheet" href="./assets/css/layout.css">
     <script src="https://kit.fontawesome.com/a22bc65f86.js" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
             </div>
         </nav>
         <div class="header-nav ">
-            <a href="login.php"><img src="./assets/img/iebs.png" alt=""></a>
+            <a href="#inicio"><img src="./assets/img/iebs.png" alt=""></a>
             <h2>P.Q.R.S</h2>
         </div>
         <div class="slider-frame">

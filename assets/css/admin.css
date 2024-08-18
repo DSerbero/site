@@ -75,6 +75,25 @@ body {
 
 /*MAIN*/
 
+.filtro {
+    position: absolute;
+    right: 12%;
+    margin-top: -50px;
+    width: 100px;
+    height: 30px;
+}
+
+.filtro > option{
+}
+
+.quitar{
+    display: none;
+}
+
+.tipo_pqrss{
+    font-weight: bold;
+}
+
 main {
     margin-bottom: 400px;
 }
@@ -202,6 +221,22 @@ main {
 
 .estado {
     margin: 5px auto;
+}
+
+.btn-revisar{
+    position: absolute;
+    right: 35%;
+    margin-top: -35px;
+    text-decoration: none;
+    padding: 10px;
+    background: #fd7e14;
+    color: #000;
+    border-radius: 1em;
+}
+
+.btn-revisar:hover{
+    padding: 9.7px;
+    background: #ca640f;
 }
 
 /*FOOTER*/
