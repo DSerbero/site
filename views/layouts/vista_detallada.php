@@ -105,24 +105,34 @@ if (isset($_SESSION['usuario'])) {
                             }
                         }
                         ?>
-                        <p>Dias restantes: 
-                            <b>
+                        
+                            
                                 <?php
-                                $fecha_now = new DateTime();
-                                $fecha_new = new DateTime($datos['fecha_cre']);
-                                $dias = 11;
-                                $fecha_new->modify("+$dias days");
-                                $fecha_new->format('Y-m-d');
-                                $diferencia = $fecha_new->diff($fecha_now);
-                                $dias_restantes = $diferencia->days;
-                                echo $dias_restantes;
+                                $estado = $datos['estado'];
+                                if ($estado ==  1 || $estado == 2) {
+                                    ?>
+                                <p>Dias restantes: <b><?php
+                                    $fecha_now = new DateTime();
+                                    $fecha_new = new DateTime($datos['fecha_cre']);
+                                    $dias = 11;
+                                    $fecha_new->modify("+$dias days");
+                                    $fecha_new->format('Y-m-d');
+                                    $diferencia = $fecha_new->diff($fecha_now);
+                                    $dias_restantes = $diferencia->days;
+                                    echo $dias_restantes;
+                                    ?> 
+                                    </b></p>
+                                    <?php
+                                } else {
+                                    
+                                }
                                 ?>
-                            </b>
-                        </p>
+                            
+                        
                         <div class="cuadro_estado">
                             <div id='estado'>
                                 <?php
-                                $estado = $datos['estado'];
+                                
                                 $sql_estado = "SELECT estado FROM estado WHERE id_estado='$estado'";
                                 $result_estado = mysqli_query($conectar, $sql_estado);
                                 foreach ($result_estado as $valor_show) {
@@ -178,6 +188,6 @@ if (isset($_SESSION['usuario'])) {
 
     <?php
 } else {
-    echo "NO";
+    header("Location: ./admin_view.php");
 }
 ?>

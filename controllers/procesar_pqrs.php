@@ -18,10 +18,8 @@ $fecha_cre = date('Y-m-d');
 $estado = 1;
 
 if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
-    // Verificar tipo de archivo permitido
     $allowed_types = ['image/jpeg', 'image/png', 'application/pdf'];
     if (in_array($_FILES['file']['type'], $allowed_types)) {
-        // Verificar tamaño del archivo (limite: 2MB)
         if ($_FILES['file']['size'] <= 2097152) {
             $file_name = $_FILES['file']['name'];
             $file_tmp = $_FILES['file']['tmp_name'];
@@ -62,7 +60,7 @@ if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
                 echo "Error en la preparación de la consulta.";
             }
         } else {
-            echo "El archivo es demasiado grande. El tamaño máximo permitido es de 2MB.";
+            header("Location: ../views/layouts/crear_pqrs.php?datos=error1");
         }
     } else {
         echo "Tipo de archivo no permitido. Solo se permiten JPG, PNG y PDF.";

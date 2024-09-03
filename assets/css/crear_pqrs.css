@@ -1,0 +1,8 @@
+.header-nav {
+    display: flex;
+    gap: 5px;
+}
+
+.izquierda_a {
+    margin-left: 12%;
+}

@@ -3,4 +3,5 @@ window.addEventListener("scroll", function () {
     header_nav.forEach(function (element) {
         element.classList.toggle("abajo", window.scrollY > 0);
     });
+
 });

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../../assets/css/s-academico.css" />
         <link rel="stylesheet" href="../../assets/css/crearpqrs.css" />
         <link rel="stylesheet" href="../../assets/css/mensaje.css" />
+        <link rel="stylesheet" href="../../assets/css/crear_pqrs.css" />
         <link rel="icon" href="../../assets/img/iebs.png">
         <script src="../../assets/js/animation.js"></script>
     </head>

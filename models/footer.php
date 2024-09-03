@@ -11,6 +11,7 @@
     <p>secretaria.iebs@colsantander.edu.co</p>
     <h3>Teléfono</h3>
     <p>304 629 7359</p>
+    <a href="./login.php" class="ingreso_adm"><h3>Acceso administrativo</h3></a>
 </div>
 <div class="footer__redes">
     <a target="_blank" href="https://www.facebook.com/colegiosantandermedellin"><img src="./assets/img/facebook.svg" alt=""></svg></a>
