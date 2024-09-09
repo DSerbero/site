@@ -1,3 +1,5 @@
+/* Estilos de los mensajes */
+
 #mensaje {
     display: flex;
     flex-direction: column;

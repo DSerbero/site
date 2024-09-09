@@ -1,4 +1,5 @@
                                                                                         
+<!-- Formulario para crear la pqrs -->
 <div class="form">
     <h1 class="title">Registro de PQRS</h1>
     <form method="post" action="../../controllers/procesar_pqrs.php" enctype="multipart/form-data" id="form">

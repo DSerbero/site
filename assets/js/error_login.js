@@ -1,3 +1,5 @@
+//Este es lo mismo que mensaje.js pero para verificar errores
+
 function getParameterByName(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);

@@ -18,3 +18,4 @@
     <a target="_blank" href="https://www.instagram.com/iebarriosantandermedellin"><img src="./assets/img/instagram.svg" alt=""></a>
     <a target="_blank" href="https://www.youtube.com/channel/UCWoeUyDf0EkK0m-NpCF9Now"><img src="./assets/img/youtube.svg" alt=""></a>
 </div>
+<!-- footer -->

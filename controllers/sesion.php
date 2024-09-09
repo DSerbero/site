@@ -1,5 +1,5 @@
 <?php
 
-session_start();
+session_start(); //Se crea la sesión
 
 ?>
